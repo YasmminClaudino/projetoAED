@@ -29,3 +29,4 @@ def validaHorario(entrada):
             except ValueError:
                 return False
         return "%s às %s" %(entrada[0],entrada[1])
+    return False
