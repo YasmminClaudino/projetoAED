@@ -7,7 +7,7 @@ def numero_valido(pergunta, inicio, fim):
         except ValueError:
             print("Entrada inválida, digite um valor entre %d e %d" %(inicio, fim))
 
-def menu():
+def menuCadastro():
     print("""\n
         ##################################################
 
@@ -18,3 +18,14 @@ def menu():
         ##################################################\n
         """)
     return numero_valido("Escolha uma opção: ", 0,2)
+
+while True:
+    opcao = menuCadastro()
+    if opcao == 0:
+        break
+    elif opcao == 1:
+        from moduloCadastramentoCartao import cadastreCliente
+        cadastreCliente()
+    elif opcao == 2:
+        from modCadastramentoEstab import cadastreEstabelecimento
+        cadastreEstabelecimento()
