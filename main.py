@@ -1,4 +1,7 @@
-def numero_valido(pergunta, inicio, fim):
+from moduloCadastramentoCartao import cadastreCliente
+from modCadastramentoEstab import cadastreEstabelecimento
+
+def validaOpcao(pergunta, inicio, fim):
     while True:
         try:
             valor = int(input(pergunta))
@@ -17,15 +20,13 @@ def menuCadastro():
 
         ##################################################\n
         """)
-    return numero_valido("Escolha uma opção: ", 0,2)
+    return validaOpcao("Escolha uma opção: ", 0,2)
 
 while True:
     opcao = menuCadastro()
     if opcao == 0:
         break
     elif opcao == 1:
-        from moduloCadastramentoCartao import cadastreCliente
         cadastreCliente()
     elif opcao == 2:
-        from modCadastramentoEstab import cadastreEstabelecimento
         cadastreEstabelecimento()

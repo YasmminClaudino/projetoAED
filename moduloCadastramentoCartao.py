@@ -1,6 +1,6 @@
 from objectClients import *
 
-def cadastreClientes():
+def cadastreCliente():
     novoCliente = Clients()
     while True:
         numeroCartao = input("Digite o número do cartão: ")
@@ -15,5 +15,4 @@ def cadastreClientes():
     novoCliente.inserirNome(nomeCliente.upper())
     limiteTotal = float(input("Digite o limite total do cartão: "))
     novoCliente.inserirLimiteTotal(limiteTotal)
-    print(novoCliente)
-cadastreClientes()
+    print("\nCartão cadastrado!\n%s" %novoCliente)

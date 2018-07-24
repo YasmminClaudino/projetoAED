@@ -5,7 +5,7 @@ def cadastreEstabelecimento():
     nomeEstabelecimento = input("Digite o nome do estabelecimento: ")
     novoEstabelecimento.inserirNome(nomeEstabelecimento.upper())
     enderecoEstab = input("Endereço do estabelecimento: ")
-    novoEstabelecimento.inserirEndereco(enderecoEstab.upper())
+    novoEstabelecimento.inserirEndereco(enderecoEstab)
     while True:
         horarioEstab = input("Horário de funcionamento (Ex.: 08:00 - 18:00): ")
         if validaHorario(horarioEstab) is not False:
@@ -13,6 +13,4 @@ def cadastreEstabelecimento():
             break
         else:
             print("Horário inválido!")
-    print(novoEstabelecimento)
-
-cadastreEstabelecimento()
+    print("\nEstabelecimento cadastrado!\n%s" %novoEstabelecimento)
