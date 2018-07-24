@@ -16,6 +16,9 @@ def menuCadastro():
 
         1 - CADASTRAR CARTÕES
         2 - CADASTRAR ESTABELECIMENTOS
+
+
+        ? - CARREGAR BANCO DE DADOS (fazer)
         0 - SAIR
 
         ##################################################\n
@@ -27,6 +30,8 @@ while True:
     if opcao == 0:
         break
     elif opcao == 1:
-        cadastreCliente()
+        novoCartao = cadastreCliente()
+        #arvoreCartoes.insere(novoCartao)
     elif opcao == 2:
-        cadastreEstabelecimento()
+        novoEstabelecimento = cadastreEstabelecimento()
+        #arvoreEstabelecimentos.insere(novoEstabelecimento)
