@@ -1,5 +1,6 @@
 from moduloCadastramentoCartao import cadastreCliente
 from modCadastramentoEstab import cadastreEstabelecimento
+from arvore import *
 
 def validaOpcao(pergunta, inicio, fim):
     while True:
@@ -25,13 +26,16 @@ def menuCadastro():
         """)
     return validaOpcao("Escolha uma opção: ", 0,2)
 
+
+arvore = ArvoreCartoes()
 while True:
     opcao = menuCadastro()
     if opcao == 0:
         break
     elif opcao == 1:
         novoCartao = cadastreCliente()
-        #arvoreCartoes.insere(novoCartao)
+        arvore.inserir(novoCartao)
+        arvore.imprimePreOrdem(arvore.raiz)
     elif opcao == 2:
         novoEstabelecimento = cadastreEstabelecimento()
         #arvoreEstabelecimentos.insere(novoEstabelecimento)
