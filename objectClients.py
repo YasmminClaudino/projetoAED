@@ -5,7 +5,7 @@ class Clients():
         self.nome = None
         self.limiteTotal = None
     def __str__(self):
-        return "%s\nCartão %s\n%i\nLimite disponível: R$ %.2f" %(self.nome,self.bandeira,self.chave,self.limiteTotal)
+        return "%s\nCartão %s\n%016i\nLimite disponível: R$ %.2f" %(self.nome,self.bandeira,self.chave,self.limiteTotal)
     def __sub__(self, valorCompra):
         self.limiteTotal -= valorCompra
     def retornaNumero(self):

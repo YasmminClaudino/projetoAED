@@ -9,7 +9,7 @@ class Establishment():
         self.montante = 0
         self.valor = 0
     def __str__(self):
-        return "%s\n%s\nHorário de funcionamento: %s" %(self.nome,self.endereco,self.horario)
+        return "%04i - %s\n%s\nHorário de funcionamento: %s" %(self.chave, self.nome,self.endereco,self.horario)
     def inserirNome(self, nome):
         self.nome = nome
     def retornaNome(self):
