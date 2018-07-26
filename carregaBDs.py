@@ -1,3 +1,5 @@
+from arvore import *
+
 listCards = []
 listEstablisment = []
 
@@ -19,4 +21,11 @@ for linha in db_estabs.readlines():
 db_cards.close()
 #db_estabs.close()
 
-#print(listCards)
+arvore = Arvore()
+
+for cartao in listCards:
+    novoCliente = Clients(cartao[0])
+    novoCliente.inserirBandeira(cartao[1].upper())
+    novoCliente.inserirNome(cartao[2].upper())
+    novoCliente.inserirLimiteTotal(float(cartao[3])
+    arvore.inserir(novoCliente)

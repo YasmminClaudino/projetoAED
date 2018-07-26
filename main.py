@@ -1,6 +1,8 @@
 from moduloCadastramentoCartao import cadastreCliente
 from modCadastramentoEstab import cadastreEstabelecimento
+from moduloAprovacao import analiseCompra
 from arvore import *
+
 
 def validaOpcao(pergunta, inicio, fim):
     while True:
@@ -18,6 +20,7 @@ def menuCadastro():
         1 - CADASTRAR CARTÕES
         2 - CADASTRAR ESTABELECIMENTOS
 
+        3 - APROVAÇÃO DE TRANSAÇÕES
 
         ? - CARREGAR BANCO DE DADOS (fazer)
         0 - SAIR
@@ -39,3 +42,5 @@ while True:
     elif opcao == 2:
         novoEstabelecimento = cadastreEstabelecimento()
         #arvoreEstabelecimentos.insere(novoEstabelecimento)
+    elif opcao == 3:
+        analiseCompra()

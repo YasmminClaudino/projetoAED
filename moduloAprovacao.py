@@ -1,5 +1,6 @@
+from arvore import *
 
-def aprovaCompra():
+def analiseCompra():
     cardNumber = input("Informe o número do cartão: ")
     localCompra = input("Informe o nome do estabelecimento: ")
     valorCompra = input("Valor da compra: R$ ")
@@ -10,7 +11,7 @@ def aprovaCompra():
     if cartao is None:
         return "Cartão não idenficado!"
     if cartao.limiteTotal() <= valorCompra:
-        #sub
+        cartao.__sub__(valorCompra)
         return "Transação Aceita!\n",cartao
     else:
         return "Compra negada. O valor da compra (%.2f) excede o limite disponível (%.2f)"
