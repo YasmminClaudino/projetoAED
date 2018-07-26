@@ -144,7 +144,7 @@ class ArvoreCartoes():
 
 class ArvoreEstabelecimentos():
     def __init__(self):
-        self.none = Establishments(0)
+        self.none = Establishment(0)
         self.none.setPai(self.none)
         self.none.setEsquerda(self.none)
         self.none.setDireita(self.none)

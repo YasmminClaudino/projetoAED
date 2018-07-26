@@ -6,7 +6,7 @@ def analiseCompra():
     cardNumber = input("Informe o número do cartão: ")
     localCompra = input("Informe o nome do estabelecimento: ")
     valorCompra = input("Valor da compra: R$ ")
-    estabelecimento = arvoreEstab.buscar(arvoreEstab.self,int(localCompra))
+    estabelecimento = arvoreEstab.buscar(arvoreEstab.raiz,int(localCompra))
     if estabelecimento is None:
         return "Compra negada. O estabelecimento não está cadastrado"
     cartao = arvoreCart.buscar(arvoreCart.raiz,int(cardNumber))
