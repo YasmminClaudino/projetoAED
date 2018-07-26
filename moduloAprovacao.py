@@ -13,6 +13,7 @@ def analiseCompra():
         return "Cartão não idenficado!"
     if cartao.limiteTotal() <= valorCompra:
         cartao.__sub__(valorCompra)
+        estabelecimento.__add__(valorCompra)
         return "Transação Aceita!\n",cartao
     else:
         return "Compra negada. O valor da compra (%.2f) excede o limite disponível (%.2f)" %(valorCompra, cartao.limiteTotal())
