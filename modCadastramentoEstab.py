@@ -3,8 +3,8 @@ from validadores import validaCodigo, validaHorario
 
 def cadastreEstabelecimento():
     novoEstabelecimento = Establishment(None)
-    codEstabelecimento = input("Informe o código do estabelecimento: ")
     while True:
+        codEstabelecimento = input("Informe o código do estabelecimento: ")
         if validaCodigo(codEstabelecimento) == True:
             novoEstabelecimento.setChave(int(codEstabelecimento))
             break

@@ -1,3 +1,4 @@
+import time
 def validaHorario(entrada):
     entrada = entrada.split(" - ")
     if len(entrada) == 2:
