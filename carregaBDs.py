@@ -1,4 +1,5 @@
 from arvore import *
+from objectClients import Clients
 
 listEstablisment = []
 
@@ -23,7 +24,7 @@ def inserirBD(Arvore):
         card[3] = card[3][:-1] #Remove o \n
         listCards.append(card)
     db_cards.close()
-    arvore = ArvoreCartoes()
+    arvore = ArvoreCartoes(Clients(0))
     for cartao in listCards:
         novoCliente = Clients(int(cartao[0]))
         novoCliente.inserirBandeira(cartao[1].upper())

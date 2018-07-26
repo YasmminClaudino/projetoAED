@@ -1,4 +1,4 @@
-from objectEstablishment import Establishment
+from objectClients import Establishment
 from validadores import validaCodigo, validaHorario
 
 def cadastreEstabelecimento():
