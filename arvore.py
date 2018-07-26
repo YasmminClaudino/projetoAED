@@ -132,6 +132,14 @@ class ArvoreCartoes():
             self.imprimePosOrdem(nodo.getEsquerda())
             self.imprimePosOrdem(nodo.getDireita())
             print(str(nodo.getChave()), end=" ")
+    def buscar(self,cartao,chave):
+        if cartao is self.none or cartao.getDado() is chave:
+            return cartao
+        elif chave < cartao.getDado():
+            return self.buscar(cartao.getEsquerda(), chave)
+        else:
+            return self.buscar(cartao.getDireita(), chave)
+
 
 class ArvoreEstabelecimentos():
     def __init__(self):
@@ -266,3 +274,11 @@ class ArvoreEstabelecimentos():
             self.imprimePosOrdem(nodo.getEsquerda())
             self.imprimePosOrdem(nodo.getDireita())
             print(str(nodo.getChave()), end=" ")
+
+    def buscar(self,estabelecimento,chave):
+        if estabelecimento is self.none or estabelecimento.getChave() is chave:
+            return estabelecimento
+        elif chave < estabelecimento.getChave():
+            return self.buscar(estabelecimento.getEsquerda(), chave)
+        else:
+            return self.buscar(estabelecimento.getDireita(), chave)
