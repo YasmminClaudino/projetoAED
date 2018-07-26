@@ -30,3 +30,4 @@ def inserirBD(Arvore):
         novoCliente.inserirNome(cartao[2].upper())
         novoCliente.inserirLimiteTotal(float(cartao[3]))
         arvore.inserir(novoCliente)
+    return arvore

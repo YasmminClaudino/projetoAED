@@ -1,5 +1,6 @@
-from objectClients import *
+from objectClients import Clients
 from objectEstablishment import *
+
 class ArvoreCartoes():
     def __init__(self):
         self.none = Clients(0)
@@ -20,7 +21,7 @@ class ArvoreCartoes():
         nodoZ.setPai(nodoY)
         if nodoY == self.none:
             self.raiz = nodoZ
-        elif nodoZ.getChave() < nodoX.getChave():
+        elif nodoZ.getChave() < nodoY.getChave():
             nodoY.setEsquerda(nodoZ)
         else:
             nodoY.setDireita(nodoZ)
@@ -55,7 +56,7 @@ class ArvoreCartoes():
                 else:
                     if nodoZ is nodoZ.getPai().getEsquerda():
                         nodoZ = nodoZ.getPai()
-                        rotacaoDireita(self,nodoZ)
+                        self.rotacaoDireita(nodoZ)
                     nodoZ.getPai().setCor("Preto")
                     nodoZ.getPai().getPai().setCor("Vermelho")
                     self.rotacaoEsquerda(nodoZ.getPai().getPai())
@@ -94,7 +95,7 @@ class ArvoreCartoes():
     def imprimeEmOrdem(self, nodo):
             if nodo is not self.none:
                 self.imprimeEmOrdem(nodo.getEsquerda())
-                print(str(nodo.getChave()), end=" ")
+                print("%s\n" %nodo)
                 self.imprimeEmOrdem(nodo.getDireita())
 
     def buscar(self,raiz, numeroCartao):
@@ -199,12 +200,11 @@ class ArvoreEstabelecimentos():
             nodoY.setDireita(nodoX)
             nodoX.setPai(nodoY)
     def imprimeEmOrdem(self, nodo):
-            if nodo is not self.none:
-                self.imprimeEmOrdem(nodo.getEsquerda())
-                print(nodo)
-                self.imprimeEmOrdem(nodo.getDireita())
-
-
+        if nodo is not self.none:
+            self.imprimeEmOrdem(nodo.getEsquerda())
+            print(nodo)
+            print("")
+            self.imprimeEmOrdem(nodo.getDireita())
     def buscar(self,raiz,codigo):
         if raiz is self.none :
             return None

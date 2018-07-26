@@ -40,10 +40,12 @@ while True:
     elif opcao == 1:
         novoCartao = cadastreCliente()
         arvore.inserir(novoCartao)
+        arvore.imprimeEmOrdem(arvore.raiz)
     elif opcao == 2:
         novoEstabelecimento = cadastreEstabelecimento()
         arvoreEst.inserir(novoEstabelecimento)
     elif opcao == 3:
         print(analiseCompra())
     elif opcao == 4:
-        inserirBD(arvore)
+        arvore = inserirBD(arvore)
+        arvore.imprimeEmOrdem(arvore.raiz)
