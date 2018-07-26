@@ -1,7 +1,4 @@
-from objectClients import Clients
-from objectEstablishment import *
-
-class ArvoreCartoes():
+class ArvoreVP():
     def __init__(self, TipoObjeto):
         self.none = TipoObjeto
         self.none.setPai(self.none)

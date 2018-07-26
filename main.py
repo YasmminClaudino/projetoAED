@@ -32,8 +32,8 @@ def menuCadastro():
     return validaOpcao("Escolha uma opção: ", 0,4)
 
 
-arvore = ArvoreCartoes(Clients(0))
-arvoreEst = ArvoreCartoes(Establishment(0))
+arvore = ArvoreVP(Clients(0))
+arvoreEst = ArvoreVP(Establishment(0))
 while True:
     opcao = menuCadastro()
     if opcao == 0:
