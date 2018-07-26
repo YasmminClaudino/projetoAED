@@ -39,7 +39,7 @@ while True:
     elif opcao == 1:
         novoCartao = cadastreCliente()
         arvore.inserir(novoCartao)
-        arvore.imprimePreOrdem(arvore.raiz)
+        arvore.imprimeEmOrdem(arvore.raiz)
     elif opcao == 2:
         novoEstabelecimento = cadastreEstabelecimento()
         #arvoreEstabelecimentos.insere(novoEstabelecimento)
@@ -47,4 +47,4 @@ while True:
         analiseCompra()
     elif opcao == 9:
         inserirBD(arvore)
-        arvore.imprimePreOrdem(arvore.raiz)
+        arvore.imprimeEmOrdem(arvore.raiz)

@@ -3,7 +3,7 @@ class Clients():
         self.chave = chave
         self.bandeira = None
         self.nome = None
-        self.limiteTotal = None
+        self.limiteTotal = 0
     def __str__(self):
         return "%s\nCartão %s\n%016i\nLimite disponível: R$ %.2f" %(self.nome,self.bandeira,self.chave,self.limiteTotal)
     def __sub__(self, valorCompra):
@@ -39,4 +39,3 @@ class Clients():
         self.cor = cor
     def getCor(self):
         return self.cor
-

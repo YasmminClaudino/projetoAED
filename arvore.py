@@ -263,7 +263,7 @@ class ArvoreEstabelecimentos():
     def imprimeEmOrdem(self, nodo):
             if nodo is not self.none:
                 self.imprimeEmOrdem(nodo.getEsquerda())
-                print(str(nodo.getChave()), end=" ")
+                print(nodo)
                 self.imprimeEmOrdem(nodo.getDireita())
     def imprimePreOrdem(self, nodo):
         if nodo is not self.none:
