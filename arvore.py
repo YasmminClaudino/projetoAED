@@ -90,51 +90,17 @@ class ArvoreCartoes():
                 nodoX.getPai().setEsquerda(nodoY)
             nodoY.setDireita(nodoX)
             nodoX.setPai(nodoY)
-    def maximo(self, nodo):
-        if nodo != None:
-            while nodo.getDireita() != None:
-                nodo = nodo.getDireita()
-            return nodo
-    def minimo(self, nodo):
-        if nodo != self.none:
-            while nodo.getEsquerda() != None:
-                nodo = nodo.getEsquerda()
-            return nodo
-    def sucessor(self, nodo):
-        if nodo.getDireita() != None:
-            return self.minimo(nodo.getDireita())
-        y = nodo.getPai()
-        while y != None and nodo == y.getDireita():
-            nodo = y
-            y = y.getPai()
-        if y is not None:
-            return y.retornaValor()
-    def transplante(self, a, b):
-        pai_a = a.getPai()
-        if pai_a == None:
-            self.raiz = b
-        elif a == pai_a.getEsquerda():
-           pai_a.setEsquerda(b)
-        else:
-            pai_a.setDireita(b)
-        b.setDireita(pai_a)
+
     def imprimeEmOrdem(self, nodo):
             if nodo is not self.none:
                 self.imprimeEmOrdem(nodo.getEsquerda())
                 print(str(nodo.getChave()), end=" ")
                 self.imprimeEmOrdem(nodo.getDireita())
-    def imprimePreOrdem(self, nodo):
-        if nodo is not self.none:
-            print(str(nodo.getChave()), end=" ")
-            self.imprimePreOrdem(nodo.getEsquerda())
-            self.imprimePreOrdem(nodo.getDireita())
-    def imprimePosOrdem(self, nodo):
-        if nodo is not self.none:
-            self.imprimePosOrdem(nodo.getEsquerda())
-            self.imprimePosOrdem(nodo.getDireita())
-            print(str(nodo.getChave()), end=" ")
+
     def buscar(self,raiz, numeroCartao):
-        if raiz is self.none or raiz.getChave() is numeroCartao:
+        if raiz is self.none:
+            return None
+        elif raiz.getChave() is numeroCartao:
             return raiz
         elif numeroCartao < raiz.getChave():
             return self.buscar(raiz.getEsquerda(), numeroCartao)
@@ -232,52 +198,17 @@ class ArvoreEstabelecimentos():
                 nodoX.getPai().setEsquerda(nodoY)
             nodoY.setDireita(nodoX)
             nodoX.setPai(nodoY)
-    def maximo(self, nodo):
-        if nodo != None:
-            while nodo.getDireita() != None:
-                nodo = nodo.getDireita()
-            return nodo
-    def minimo(self, nodo):
-        if nodo != self.none:
-            while nodo.getEsquerda() != None:
-                nodo = nodo.getEsquerda()
-            return nodo
-    def sucessor(self, nodo):
-        if nodo.getDireita() != None:
-            return self.minimo(nodo.getDireita())
-        y = nodo.getPai()
-        while y != None and nodo == y.getDireita():
-            nodo = y
-            y = y.getPai()
-        if y is not None:
-            return y.retornaValor()
-    def transplante(self, a, b):
-        pai_a = a.getPai()
-        if pai_a == None:
-            self.raiz = b
-        elif a == pai_a.getEsquerda():
-           pai_a.setEsquerda(b)
-        else:
-            pai_a.setDireita(b)
-        b.setDireita(pai_a)
     def imprimeEmOrdem(self, nodo):
             if nodo is not self.none:
                 self.imprimeEmOrdem(nodo.getEsquerda())
                 print(nodo)
                 self.imprimeEmOrdem(nodo.getDireita())
-    def imprimePreOrdem(self, nodo):
-        if nodo is not self.none:
-            print(str(nodo.getChave()), end=" ")
-            self.imprimePreOrdem(nodo.getEsquerda())
-            self.imprimePreOrdem(nodo.getDireita())
-    def imprimePosOrdem(self, nodo):
-        if nodo is not self.none:
-            self.imprimePosOrdem(nodo.getEsquerda())
-            self.imprimePosOrdem(nodo.getDireita())
-            print(str(nodo.getChave()), end=" ")
+
 
     def buscar(self,raiz,codigo):
-        if raiz is self.none or raiz.getChave() is codigo:
+        if raiz is self.none :
+            return None
+        elif raiz.getChave() is codigo:
             return raiz
         elif codigo < raiz.getChave():
             return self.buscar(raiz.getEsquerda(), codigo)

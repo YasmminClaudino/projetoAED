@@ -1,5 +1,3 @@
-import time
-
 class Establishment():
     def __init__(self, chave):
         self.chave = chave
@@ -48,4 +46,3 @@ class Establishment():
         self.cor = cor
     def getCor(self):
         return self.cor
-

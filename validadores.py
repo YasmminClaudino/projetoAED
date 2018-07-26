@@ -1,5 +1,5 @@
-import time
 def validaHorario(entrada):
+    import time
     entrada = entrada.split(" - ")
     if len(entrada) == 2:
         for horario in entrada:
@@ -13,7 +13,7 @@ def validaHorario(entrada):
 
 def validaCartao(numeroCartao):
     if numeroCartao.isdigit():
-        if 4 <= len(numeroCartao) <= 16:
+        if 14 <= len(numeroCartao) <= 20:
             return True
 
 

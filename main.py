@@ -23,15 +23,16 @@ def menuCadastro():
 
         3 - APROVAÇÃO DE TRANSAÇÕES
 
-        9 - CARREGAR BANCO DE DADOS (fazer)
+        4 - CARREGAR BANCO DE DADOS
         0 - SAIR
 
         ##################################################\n
         """)
-    return validaOpcao("Escolha uma opção: ", 0,9)
+    return validaOpcao("Escolha uma opção: ", 0,4)
 
 
 arvore = ArvoreCartoes()
+arvoreEst = ArvoreEstabelecimentos()
 while True:
     opcao = menuCadastro()
     if opcao == 0:
@@ -39,12 +40,10 @@ while True:
     elif opcao == 1:
         novoCartao = cadastreCliente()
         arvore.inserir(novoCartao)
-        arvore.imprimeEmOrdem(arvore.raiz)
     elif opcao == 2:
         novoEstabelecimento = cadastreEstabelecimento()
-        #arvoreEstabelecimentos.insere(novoEstabelecimento)
+        arvoreEst.inserir(novoEstabelecimento)
     elif opcao == 3:
-        analiseCompra()
-    elif opcao == 9:
+        print(analiseCompra())
+    elif opcao == 4:
         inserirBD(arvore)
-        arvore.imprimeEmOrdem(arvore.raiz)

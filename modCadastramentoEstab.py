@@ -22,3 +22,4 @@ def cadastreEstabelecimento():
         else:
             print("Horário inválido!")
     print("\nEstabelecimento cadastrado!\n%s" %novoEstabelecimento)
+    return novoEstabelecimento
