@@ -2,6 +2,7 @@ from moduloCadastramentoCartao import cadastreCliente
 from modCadastramentoEstab import cadastreEstabelecimento
 from moduloAprovacao import analiseCompra
 from arvore import *
+from carregaBDs import inserirBD
 
 
 def validaOpcao(pergunta, inicio, fim):
@@ -22,12 +23,12 @@ def menuCadastro():
 
         3 - APROVAÇÃO DE TRANSAÇÕES
 
-        ? - CARREGAR BANCO DE DADOS (fazer)
+        9 - CARREGAR BANCO DE DADOS (fazer)
         0 - SAIR
 
         ##################################################\n
         """)
-    return validaOpcao("Escolha uma opção: ", 0,2)
+    return validaOpcao("Escolha uma opção: ", 0,9)
 
 
 arvore = ArvoreCartoes()
@@ -44,3 +45,6 @@ while True:
         #arvoreEstabelecimentos.insere(novoEstabelecimento)
     elif opcao == 3:
         analiseCompra()
+    elif opcao == 9:
+        inserirBD(arvore)
+        arvore.imprimePreOrdem(arvore.raiz)

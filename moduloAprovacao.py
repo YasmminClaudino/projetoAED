@@ -14,5 +14,4 @@ def analiseCompra():
         cartao.__sub__(valorCompra)
         return "Transação Aceita!\n",cartao
     else:
-        return "Compra negada. O valor da compra (%.2f) excede o limite disponível (%.2f)"
-        %(valorCompra, cartao.limiteTotal())
+        return "Compra negada. O valor da compra (%.2f) excede o limite disponível (%.2f)" %(valorCompra, cartao.limiteTotal())
