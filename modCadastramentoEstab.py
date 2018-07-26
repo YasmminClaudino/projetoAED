@@ -2,13 +2,14 @@ from objectEstablishment import Establishment
 from validadores import validaCodigo, validaHorario
 
 def cadastreEstabelecimento():
-    novoEstabelecimento = Establishment()
+    novoEstabelecimento = Establishment(None)
     codEstabelecimento = input("Informe o código do estabelecimento: ")
-    if validaCartao(codEstabelecimento) == True:
+    while True:
+        if validaCodigo(codEstabelecimento) == True:
             novoEstabelecimento.setChave(int(codEstabelecimento))
             break
         else:
-            print("ERRO: Digite apenas números.") 
+            print("ERRO: Digite apenas números.")
     nomeEstabelecimento = input("Digite o nome do estabelecimento: ")
     novoEstabelecimento.inserirNome(nomeEstabelecimento.upper())
     enderecoEstab = input("Endereço do estabelecimento: ")

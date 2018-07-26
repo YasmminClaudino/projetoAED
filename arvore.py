@@ -135,7 +135,7 @@ class ArvoreCartoes():
     def buscar(self,cartao,chave):
         if cartao is self.none or cartao.getDado() is chave:
             return cartao
-        elif chave < cartao.getDado():
+        elif cahve < cartao.getDado():
             return self.buscar(cartao.getEsquerda(), chave)
         else:
             return self.buscar(cartao.getDireita(), chave)
@@ -276,9 +276,9 @@ class ArvoreEstabelecimentos():
             print(str(nodo.getChave()), end=" ")
 
     def buscar(self,estabelecimento,chave):
-        if estabelecimento is self.none or estabelecimento.getChave() is chave:
+        if estabelecimento is self.none or estabelecimento.getDado() is chave:
             return estabelecimento
-        elif chave < estabelecimento.getChave():
+        elif cahve < estabelecimento.getDado():
             return self.buscar(estabelecimento.getEsquerda(), chave)
         else:
             return self.buscar(estabelecimento.getDireita(), chave)
