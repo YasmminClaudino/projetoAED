@@ -40,7 +40,3 @@ class Clients():
     def getCor(self):
         return self.cor
 
-def validaCartao(numeroCartao):
-    if numeroCartao.isdigit():
-        if 4 <= len(numeroCartao) <= 16:
-            return True

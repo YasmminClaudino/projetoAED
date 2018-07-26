@@ -1,6 +1,8 @@
 import time
+
 class Establishment():
-    def __init__(self):
+    def __init__(self, chave):
+        self.chave = chave
         self.nome = None
         self.endereco = None
         self.horario = None
@@ -43,13 +45,4 @@ class Establishment():
         self.cor = cor
     def getCor(self):
         return self.cor
-def validaHorario(entrada):
-    entrada = entrada.split(" - ")
-    if len(entrada) == 2:
-        for horario in entrada:
-            try:
-                time.strptime(horario, '%H:%M')
-            except ValueError:
-                return False
-        return "%s às %s" %(entrada[0],entrada[1])
-    return False
+

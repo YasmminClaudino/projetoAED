@@ -1,4 +1,5 @@
-from objectClients import *
+from objectClients import Clients
+from validadores import validaCartao
 
 def cadastreCliente():
     novoCliente = Clients(None)
