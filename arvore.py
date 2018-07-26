@@ -64,7 +64,6 @@ class ArvoreCartoes():
 
         self.consertaInserir(nodoZ)
     def consertaInserir(self, nodoZ):
-        input("teste")
         while nodoZ.getPai().cor is "Vermelho":
             if nodoZ.getPai() is nodoZ.getPai().getPai().getEsquerda():
                 nodoY = nodoZ.getPai().getPai().getDireita()
@@ -98,11 +97,11 @@ class ArvoreCartoes():
     def rotacaoEsquerda(self,nodoX):
         nodoY = nodoX.getDireita() #define y
         if nodoY is not self.none:
-            nodoX.getDireita().setEsquerda(nodoY.getEsquerda()) #Tranforna o filho esquerdo de y no filho direito de x
-            if nodoY.getEsquerda() is not None:
+            nodoX.setDireita(nodoY.getEsquerda()) #Tranforna o filho esquerdo de y no filho direito de x
+            if nodoY.getEsquerda() is not self.none:
                 nodoY.getEsquerda().setPai(nodoX) #Muda a progenitor de fato
-            nodoY.getPai().setPai(nodoX.getPai())
-            if nodoX.getPai() is not None:
+            nodoY.setPai(nodoX.getPai())
+            if nodoX.getPai() is not self.none:
                 self.raiz = nodoY
             elif nodoX == nodoX.getPai().getEsquerda():
                 nodoX.getPai().setEsquerda(nodoY)
@@ -114,10 +113,10 @@ class ArvoreCartoes():
         nodoY = nodoX.getEsquerda() #define y
         if nodoY is not self.none:
             nodoX.setEsquerda(nodoY.getDireita()) #Tranforna o filho direito de y no filho esquerdo de x
-            if nodoY.getDireita() is not None:
+            if nodoY.getDireita() is not self.none:
                 nodoY.getDireita().setPai(nodoX) #Muda a progenitor de fato
             nodoY.setPai(nodoX.getPai())
-            if nodoX.gePai() is not None:
+            if nodoX.getPai() is not self.none:
                 self.raiz = nodoY
             elif nodoX == nodoX.getPai().getDireita():
                 nodoX.getPai().setDireita(nodoY)
