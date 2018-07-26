@@ -1,14 +1,15 @@
 from arvore import *
 
 def analiseCompra():
-    arvore = arvore()
+    arvoreEstab = ArvoreEstabelecimentos()
+    arvoreCart = ArvoreCartoes()
     cardNumber = input("Informe o número do cartão: ")
     localCompra = input("Informe o nome do estabelecimento: ")
     valorCompra = input("Valor da compra: R$ ")
-    estabelecimento = arvore.buscar(localCompra)
+    estabelecimento = arvoreEstab.buscar(arvoreEstab.self,int(localCompra))
     if estabelecimento is None:
         return "Compra negada. O estabelecimento não está cadastrado"
-    cartao = arvore.buscar(int(cardNumber))
+    cartao = arvoreCart.buscar(arvoreCart.raiz,int(cardNumber))
     if cartao is None:
         return "Cartão não idenficado!"
     if cartao.limiteTotal() <= valorCompra:

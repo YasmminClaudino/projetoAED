@@ -1,4 +1,5 @@
 from objectClients import *
+from objectEstablishment import *
 class ArvoreCartoes():
     def __init__(self):
         self.none = Clients(0)
@@ -132,13 +133,13 @@ class ArvoreCartoes():
             self.imprimePosOrdem(nodo.getEsquerda())
             self.imprimePosOrdem(nodo.getDireita())
             print(str(nodo.getChave()), end=" ")
-    def buscar(self,cartao,chave):
-        if cartao is self.none or cartao.getDado() is chave:
-            return cartao
-        elif cahve < cartao.getDado():
-            return self.buscar(cartao.getEsquerda(), chave)
+    def buscar(self,raiz, numeroCartao):
+        if raiz is self.none or raiz.getChave() is numeroCartao:
+            return raiz
+        elif numeroCartao < raiz.getChave():
+            return self.buscar(raiz.getEsquerda(), numeroCartao)
         else:
-            return self.buscar(cartao.getDireita(), chave)
+            return self.buscar(raiz.getDireita(), numeroCartao)
 
 
 class ArvoreEstabelecimentos():
@@ -275,10 +276,10 @@ class ArvoreEstabelecimentos():
             self.imprimePosOrdem(nodo.getDireita())
             print(str(nodo.getChave()), end=" ")
 
-    def buscar(self,estabelecimento,chave):
-        if estabelecimento is self.none or estabelecimento.getDado() is chave:
-            return estabelecimento
-        elif cahve < estabelecimento.getDado():
-            return self.buscar(estabelecimento.getEsquerda(), chave)
+    def buscar(self,raiz,codigo):
+        if raiz is self.none or raiz.getChave() is codigo:
+            return raiz
+        elif codigo < raiz.getChave():
+            return self.buscar(raiz.getEsquerda(), codigo)
         else:
-            return self.buscar(estabelecimento.getDireita(), chave)
+            return self.buscar(raiz.getDireita(), codigo)
