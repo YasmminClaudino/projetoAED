@@ -4,6 +4,7 @@ from moduloAprovacao import analiseCompra
 from arvore import *
 from carregaBDs import *
 from objectClients import Clients, Establishment
+from relatorios import *
 
 
 
@@ -32,6 +33,21 @@ def menuCadastro():
         ##################################################\n
         """)
     return validaOpcao("Escolha uma opção: ", 0,5)
+
+def menuRelatorio():
+    print("""\n
+        ##################################################
+
+        1 - RELATÓRIO DE UM CLIENTE ESPECÍFICO
+        2 - RELATÓRIO DE TODOS OS CLIENTES
+
+        3 - RELATÓRIO DE UM ESTEBELECIMENTO ESPECÍFICO
+        4 - RELATÓRIO DE TODOS OS ESTABELECIMENTOS
+        0 - VOLTAR AO MENU PRINCIPAL
+
+        ##################################################\n
+        """)
+    return validaOpcao("Escolha uma opção: ", 0,4)
 
 def continuar():
     input("\nPressione ENTER para continuar...")
@@ -64,4 +80,17 @@ while True:
         print("\n     ### FIM DA LISTA ###     ")
         continuar()
     elif opcao == 5:
-        from relatorios import *
+        while True:
+            entrada = menuRelatorio()
+            if entrada == 0:
+                break
+            elif entrada == 1:
+                print(clienteUnico(arvore))
+            elif entrada == 2:
+                todosCli(arvore)
+                continuar()
+            elif entrada == 3:
+                print(estabelecimentoUnico(arvoreEst))
+            elif entrada == 4:
+                todosEstab(arvoreEst)
+                continuar()

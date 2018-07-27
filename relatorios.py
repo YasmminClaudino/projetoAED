@@ -1,52 +1,30 @@
-from main import *
 from arvore import *
 
-def clienteUnico():
+def clienteUnico(Arvore):
+    arvore = Arvore
     cardNumber = input("Informe o número do cartão do cliente: ")
-    cartao = arvoreCartoes.buscar(arvoreCartoes.raiz,int(cardNumber))
+    cartao = arvore.buscar(arvore.raiz,int(cardNumber))
     if cartao is None:
         return "Cliente não idenficado!"
     else:
-        cliente.imprimeEmOrdem(cliente.raiz)
-        return cliente
+        return "\nCliente encontrado:\n\n%s" %cartao
 
-def validaOpcao(pergunta, inicio, fim):
-    while True:
-        try:
-            valor = int(input(pergunta))
-            if inicio <= valor <= fim:
-                return(valor)
-        except ValueError:
-            print("Entrada inválida, digite um valor entre %d e %d" %(inicio, fim))
 
-def menuRelatorio():
-    print("""\n
-        ##################################################
+def estabelecimentoUnico(Arvore):
+    arvore = Arvore
+    codigo = input("Informe o código do estabelecimento: ")
+    cod = arvore.buscar(arvore.raiz,int(codigo))
+    if cod is None:
+        return "Estabelecimento não idenficado!"
+    else:
+        return "\nEstabelcimento encontrado:\n\n%s" %cod
 
-        1 - RELATÓRIO DE UM CLIENTE ESPECÍFICO
-        2 - RELATÓRIO DE TODOS OS CLIENTES
+def todosEstab(Arvore):
+    print("Estabelecimentos cadastrados:\n\n")
+    arvore = Arvore
+    arvore.imprimeEmOrdem(arvore.raiz)
 
-        3 - RELATÓRIO DE UM ESTEBELECIMENTO ESPECÍFICO
-
-        4 - RELATÓRIO DE TODOS OS ESTABELECIMENTOS
-        0 - VOLTAR AO MENU PRINCIPAL
-
-        ##################################################\n
-        """)
-    return validaOpcao("Escolha uma opção: ", 0,4)
-
-def continuar():
-    input("\nPressione ENTER para continuar...")
-
-cliente = ArvoreVP(Clients(0))
-while True:
-    opcao = menuRelatorio()
-    if opcao == 0:
-        m = menuCadastro()
-        break
-    elif opcao == 1:
-        c = clienteUnico()
-    elif opcao == 3:
-        continue
-    elif opcao == 4:
-        continue
+def todosCli(Arvore):
+    print("Clientes cadastrados:\n\n")
+    arvore = Arvore
+    arvore.imprimeEmOrdem(arvore.raiz)
