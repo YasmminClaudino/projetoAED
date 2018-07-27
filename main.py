@@ -2,7 +2,7 @@ from moduloCadastramentoCartao import cadastreCliente
 from modCadastramentoEstab import cadastreEstabelecimento
 from moduloAprovacao import analiseCompra
 from arvore import *
-from carregaBDs import inserirBD
+from carregaBDs import *
 from objectClients import Clients, Establishment
 
 
@@ -52,8 +52,12 @@ while True:
         print(analiseCompra(arvore, arvoreEst))
         continuar()
     elif opcao == 4:
-        arvore = inserirBD(arvore)
+        arvore = inserirBDCards(arvore)
         print("Foram adicionados os seguintes clientes:\n\n")
         arvore.imprimeEmOrdem(arvore.raiz)
+        print("\n     ### FIM DA LISTA ###     ")
+        arvoreEst = inserirBDEstablisments(arvoreEst)
+        print("Foram adicionados os seguintes estabelecimentos:\n\n")
+        arvoreEst.imprimeEmOrdem(arvoreEst.raiz)
         print("\n     ### FIM DA LISTA ###     ")
         continuar()

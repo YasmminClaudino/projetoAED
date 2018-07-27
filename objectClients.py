@@ -52,7 +52,8 @@ class Establishment(Nodo):
         self.montante = 0
         self.valor = 0
     def __str__(self):
-        return "%04i - %s\n%s\nHorário de funcionamento: %s" %(self.chave, self.nome,self.endereco,self.horario)
+        return ("%04i - %s\n%s\nHorário de funcionamento: %s\nMontante negociado: R$ %.2f\nTaxas a pagar: R$ %.2f"
+         %(self.chave, self.nome,self.endereco,self.horario,self.montante,self.valor))
     def __add__(self, valorCompra):
         self.montante += valorCompra
         self.valor += (valorCompra*0.02)

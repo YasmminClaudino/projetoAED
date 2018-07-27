@@ -17,6 +17,6 @@ def analiseCompra(arvoreCartoes, arvoreEstabelecimentos):
     if cartao.limiteTotal >= valorCompra:
         cartao.__sub__(valorCompra)
         estabelecimento.__add__(valorCompra)
-        return "Transação Aceita!\n%s" %cartao
+        return "\nTransação Aceita!\n\n%s\n\nNo estabelecimento:\n\n%s" %(cartao, estabelecimento)
     else:
         return "Compra negada. O valor da compra (%.2f) excede o limite disponível (%.2f)." %(valorCompra, cartao.limiteTotal)

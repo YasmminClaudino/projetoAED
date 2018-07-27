@@ -1,0 +1,4 @@
+125@Casas Bacia@Rua Lagoa dos Gatos, 751@08:00 - 17:30
+170@Posto Piranga@Rodovia BR-101, KM 41@06:00 - 23:00
+225@Restaurante Comeu-Morreu@Avenida Beira Mar, 124@09:00 - 21:00
+070@Armazem Legal@Avenida Domingos Dutra, s/n@08:00 - 17:00
