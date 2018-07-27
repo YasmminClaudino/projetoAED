@@ -6,6 +6,7 @@ from carregaBDs import *
 from objectClients import Clients, Establishment
 
 
+
 def validaOpcao(pergunta, inicio, fim):
     while True:
         try:
@@ -25,11 +26,12 @@ def menuCadastro():
         3 - APROVAÇÃO DE TRANSAÇÕES
 
         4 - CARREGAR BANCO DE DADOS
+        5 - GERAR RELATÓRIOS
         0 - SAIR
 
         ##################################################\n
         """)
-    return validaOpcao("Escolha uma opção: ", 0,4)
+    return validaOpcao("Escolha uma opção: ", 0,5)
 
 def continuar():
     input("\nPressione ENTER para continuar...")
@@ -61,3 +63,5 @@ while True:
         arvoreEst.imprimeEmOrdem(arvoreEst.raiz)
         print("\n     ### FIM DA LISTA ###     ")
         continuar()
+    elif opcao == 5:
+        from relatorios import *
